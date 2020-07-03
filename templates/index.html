@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <div class="container">
+      <h1>Please login</h1>
+      <br>
+      <form action="{{ url_for('list') }}" method="post">
+
+        <input type="text" placeholder="site name" name="site" value="{{
+          request.form.site}}">
+        <input type="text" placeholder="username" name="username" value="{{
+          request.form.username }}">
+        
+        <input class="btn btn-default" type="submit" value="Login">
+
+      </form>
+      {% if password %}
+        <p class="password"><strong>Password:</strong> {{ password }}
+      {% endif %}
+      
+    </div>
+  </body>
+</html>
